@@ -1,0 +1,15 @@
+<!-- use reactive form to validate not html validate -->
+<mat-card>
+  <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="" formControlName="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="!loginForm.valid" type="submit">Login</button>
+  </form>
+  <br><br><br>
+</mat-card>

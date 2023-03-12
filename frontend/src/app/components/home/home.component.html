@@ -1,0 +1,11 @@
+<mat-card>
+  <p>Welcome {{first_name}} {{last_name}}</p>
+  <form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="update(form.value)" novalidate>
+    <mat-form-field>
+      <mat-label>New Password</mat-label>
+      <input matInput type="password" placeholder="" formControlName="password">
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Update Password</button>
+  </form>
+</mat-card>

@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <span>
+    <a>
+      IMPACS CBSI-CONNECT
+    </a>
+  </span>
+  <span>
+    <a *ngIf="isAuthenticated" routerLinkActive="active-link" routerLink="/home">
+      <span>Home</span>
+    </a>
+    <a *ngIf="!isAuthenticated" routerLinkActive="active-link" routerLink="/login">
+      <span>Login</span>
+    </a>
+    <a *ngIf="isAuthenticated" (click)="logout()" routerLink="/">
+      <span>Logout</span>
+    </a>
+    <a *ngIf="!isAuthenticated" routerLinkActive="active-link" routerLink="/registration">
+      <span>Register</span>
+    </a>    
+  </span>
+
+</mat-toolbar>
